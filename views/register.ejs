@@ -1,0 +1,23 @@
+<%- include('partials/header', { title: 'Registration' }) %>
+
+<div class="card">
+    <h2 class="text-2xl font-semibold text-center mb-6">Registration</h2>
+    <form id="register-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <button type="submit" class="btn-primary">Register</button>
+        <a href="/login" class="text-link">Already have an account? Login here</a>
+    </form>
+</div>
+
+<%- include('partials/footer') %>
