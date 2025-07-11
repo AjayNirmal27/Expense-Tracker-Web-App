@@ -1,0 +1,22 @@
+<%- include('partials/header', { title: 'Add New Expense', username: username }) %>
+
+<div class="card">
+    <h2 class="text-2xl font-semibold text-center mb-6">Add New Expense</h2>
+    <form id="add-expense-form">
+        <label for="expenseName">Expense Name:</label>
+        <input type="text" id="expenseName" name="expenseName" required>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" step="0.01" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description">
+
+        <button type="submit" class="btn-primary">Add Expense</button>
+    </form>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,27 @@
+<%- include('partials/header', { title: 'Expense List', username: username }) %>
+
+<div class="card">
+    <h2 class="text-2xl font-semibold text-center mb-6">Expense List</h2>
+    <div id="expenses-container">
+        <% if (expenses && expenses.length > 0) { %>
+            <% expenses.forEach(expense => { %>
+                <div class="expense-item">
+                    <div class="expense-item-details">
+                        <p class="font-semibold text-lg"><%= expense.expenseName %></p>
+                        <p class="text-gray-700">Amount: $<%= parseFloat(expense.amount).toFixed(2) %></p>
+                        <p class="text-gray-600">Date: <%= expense.date %></p>
+                        <p class="text-gray-600">Description: <%= expense.description %></p>
+                    </div>
+                    <div class="expense-item-actions">
+                        <a href="/expenses/edit/<%= expense.id %>" class="edit-btn">Edit</a>
+                        <button class="delete-btn" data-id="<%= expense.id %>">Delete</button>
+                    </div>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p id="no-expenses-message" class="text-center text-gray-500">No expenses added yet.</p>
+        <% } %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
